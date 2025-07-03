@@ -1,0 +1,137 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0b0f2b;
+  color: #f0f8ff;
+  padding: 40px;
+}
+
+h2 {
+  color: #89c2d9;
+  font-size: 28px;
+}
+
+input, button {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  margin: 10px 10px 10px 0;
+  font-size: 16px;
+}
+
+input {
+  width: 300px;
+  background-color: #16213e;
+  color: #f0f8ff;
+  border: 2px solid #324976;
+}
+
+button {
+  background-color: #4a69bd;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #1e3799;
+}
+
+.output {
+  display: none; /* hidden by default */
+  background-color: #1c2541;
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 15px #4a69bd;
+  color: #f0f8ff;
+}
+
+
+strong {
+  color: #feca57;
+  font-weight: bold;
+}
+.mutation-controls {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #122b52;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #4a69bd;
+}
+
+.mutation-controls label {
+  display: block;
+  margin-top: 10px;
+  color: #c8d6e5;
+}
+
+.mutation-controls input,
+.mutation-controls select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #3c6382;
+  border-radius: 6px;
+  background-color: #0b132b;
+  color: #fff;
+}
+.dna-3d-wrapper {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.dna-3d {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  perspective: 800px;
+  animation: floaty 6s ease-in-out infinite;
+}
+
+.helix {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform-style: preserve-3d;
+  animation: rotate 6s linear infinite;
+}
+
+.helix.reverse {
+  animation-direction: reverse;
+}
+
+.helix span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #48dbfb;
+  border-radius: 50%;
+  box-shadow: 0 0 5px #48dbfb;
+  top: 0;
+  left: 0;
+}
+
+.helix span:nth-child(1)  { transform: rotateY(0deg) translateZ(60px) translateY(0px); }
+.helix span:nth-child(2)  { transform: rotateY(36deg) translateZ(60px) translateY(20px); }
+.helix span:nth-child(3)  { transform: rotateY(72deg) translateZ(60px) translateY(40px); }
+.helix span:nth-child(4)  { transform: rotateY(108deg) translateZ(60px) translateY(60px); }
+.helix span:nth-child(5)  { transform: rotateY(144deg) translateZ(60px) translateY(80px); }
+.helix span:nth-child(6)  { transform: rotateY(180deg) translateZ(60px) translateY(100px); }
+.helix span:nth-child(7)  { transform: rotateY(216deg) translateZ(60px) translateY(120px); }
+.helix span:nth-child(8)  { transform: rotateY(252deg) translateZ(60px) translateY(140px); }
+.helix span:nth-child(9)  { transform: rotateY(288deg) translateZ(60px) translateY(160px); }
+.helix span:nth-child(10) { transform: rotateY(324deg) translateZ(60px) translateY(180px); }
+
+@keyframes rotate {
+  0%   { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}

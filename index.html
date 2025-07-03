@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DNA Mutation Simulator 🧬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dna-3d-wrapper">
+  <div class="dna-3d">
+    <div class="helix">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="helix reverse">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</div>
+
+    
+  <h2>DNA Mutation Simulator 🧬</h2>
+
+  <input type="text" id="dnaInput" placeholder="Enter DNA (e.g. ATGCGT)">
+  <button id="simulateBtn">Simulate</button>
+
+  <div class="mutation-controls">
+    <h3>🔧 Apply Mutation</h3>
+    <label>Type:
+      <select id="mutationType">
+        <option value="substitute">Substitution</option>
+        <option value="insert">Insertion</option>
+        <option value="delete">Deletion</option>
+      </select>
+    </label>
+    <label>Position (1-based):
+      <input type="number" id="mutationPos" min="1">
+    </label>
+    <label>Base (A/T/G/C):
+      <input type="text" id="newBase" maxlength="1">
+    </label>
+    <button id="mutateBtn">Mutate & Analyze</button>
+  </div>
+
+  <div class="output" id="results"></div>
+  <div class="output" id="mutationEffect"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
